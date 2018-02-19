@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.joanc.temperatureapp.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature Convertor"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="188dp"
+        android:layout_height="25dp"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:text="0 F"
+        android:textAlignment="center"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="55dp"
+        android:layout_height="19dp"
+        android:text="200 F"
+        tools:layout_editor_absoluteX="313dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="97dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/summer"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="97dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/spring"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="97dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/winter"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+</android.support.constraint.ConstraintLayout>
