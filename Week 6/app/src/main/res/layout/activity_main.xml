@@ -78,4 +78,13 @@
         android:layout_marginTop="38dp"
         android:text="STOP SERVICES" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:text="Timer" />
+
 </RelativeLayout>
