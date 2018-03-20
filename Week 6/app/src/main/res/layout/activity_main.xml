@@ -29,7 +29,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnStartServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -38,51 +38,51 @@
         android:text="START SERVICES" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/btnStartServices"
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginTop="23dp"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button"
+        android:layout_toLeftOf="@+id/btnStartServices"
+        android:layout_toStartOf="@+id/btnStartServices"
         android:text="START" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button2"
+        android:layout_alignBottom="@+id/btnStart"
         android:layout_centerHorizontal="true"
         android:text="STOP" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button3"
-        android:layout_alignBottom="@+id/button3"
+        android:layout_alignBaseline="@+id/btnStop"
+        android:layout_alignBottom="@+id/btnStop"
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
-        android:layout_toEndOf="@+id/button"
-        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/btnStartServices"
+        android:layout_toRightOf="@+id/btnStartServices"
         android:text="RESET" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnStopServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/btnStop"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="38dp"
         android:text="STOP SERVICES" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button5"
+        android:layout_below="@+id/btnStopServices"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp"
         android:text= "0:00:000" />

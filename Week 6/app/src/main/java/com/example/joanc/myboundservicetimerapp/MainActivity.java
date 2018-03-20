@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
     Button btnStart;
     Button btnPause;
     Button btnReset;
-    TextView txtTimer;
+    TextView counter;
     Handler customHandler = new Handler();
-    LinearLayout container;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +25,51 @@ public class MainActivity extends AppCompatActivity {
         btnStartServices = (Button) findViewById(R.id.btnStartServices);
         btnStopServices = (Button) findViewById(R.id.btnStopServices);
         btnStart = (Button) findViewById(R.id.btnStart);
-        btnPause = (Button) findViewById(R.id.btnPause);
         btnStop = (Button) findViewById(R.id.btnStop);
-        txtTimer = (TextView) findViewById(R.id.timerValue);
+        btnPause = (Button) findViewById(R.id.btnPause);
+        TextView = (TextView) findViewById(R.id.counter);
+
+        btnStartServices.setOnClickListener(new View.OnClickListener());
+        {
+            @Override
+            public void onClick (View view);
+            {
+                StartTimer = SystemClock.uptimeMillis();
+
+
+            }
+        } ;
+
+        btnStart.setOnClickListener(new View.OnClickListener());
+        {
+            @Override
+            public void onClick (View view);
+            {
+            }
+        } ;
+
+
+        btnStop.setOnClickListener(new View.OnClickListener());
+        {
+            @Override
+            public void onClick (View view);{
+            }
+        } ;
+
+        btnPause.setOnClickListener(new View.OnClickListener());
+        {
+            @Override
+            public void onClick (View view);{
+            }
+        } ;
+
+        btnStopServices.setOnClickListener(new View.OnClickListener());
+        {
+            @Override
+            public void onClick (View view);
+            {
+
+            }
+        } ;
 
     }
-}
-
-
-
