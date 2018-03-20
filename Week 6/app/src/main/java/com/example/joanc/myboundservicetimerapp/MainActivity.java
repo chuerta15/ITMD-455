@@ -2,6 +2,9 @@ package com.example.joanc.myboundservicetimerapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,15 +22,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnStartServices = (Button)findViewById(R.id.btnStartServices);
-        btnStopServices = (Button)findViewById(R.id.btnStopServices);
-        btnStart = (Button)findViewById(R.id.btnStart);
-        btnPause = (Button)findViewById(R.id.btnPause);
-        btnStop = (Button)findViewById(R.id.btnStop);
-        txtTimer = (TextView)findViewById(R.id.timerValue);
-
-        }
-
+        btnStartServices = (Button) findViewById(R.id.btnStartServices);
+        btnStopServices = (Button) findViewById(R.id.btnStopServices);
+        btnStart = (Button) findViewById(R.id.btnStart);
+        btnPause = (Button) findViewById(R.id.btnPause);
+        btnStop = (Button) findViewById(R.id.btnStop);
+        txtTimer = (TextView) findViewById(R.id.timerValue);
 
     }
 }
+
+
+

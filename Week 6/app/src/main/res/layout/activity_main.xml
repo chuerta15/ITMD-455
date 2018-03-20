@@ -85,6 +85,6 @@
         android:layout_below="@+id/button5"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp"
-        android:text="Timer" />
+        android:text= "0:00:000" />
 
 </RelativeLayout>
