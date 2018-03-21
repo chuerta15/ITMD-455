@@ -52,21 +52,21 @@ public class MainActivity extends AppCompatActivity {
         btnStop.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view);{
+            public void onClick (View view){
             }
         } ;
 
         btnPause.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view);{
+            public void onClick (View view){
             }
         } ;
 
         btnStopServices.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view);
+            public void onClick (View view)
             {
 
             }
