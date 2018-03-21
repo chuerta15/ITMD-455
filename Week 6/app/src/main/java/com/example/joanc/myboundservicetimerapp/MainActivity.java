@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Button;
+import android.os.Handler;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -11,10 +13,16 @@ public class MainActivity extends AppCompatActivity {
     Button btnStartServices;
     Button btnStopServices;
     Button btnStart;
-    Button btnPause;
+    Button btnStop;
     Button btnReset;
     TextView counter;
     Handler customHandler = new Handler();
+
+    //Starting the time
+    long tStart = System.currentTimeMillis();
+
+
+
 
 
     @Override
@@ -26,13 +34,15 @@ public class MainActivity extends AppCompatActivity {
         btnStopServices = (Button) findViewById(R.id.btnStopServices);
         btnStart = (Button) findViewById(R.id.btnStart);
         btnStop = (Button) findViewById(R.id.btnStop);
-        btnPause = (Button) findViewById(R.id.btnPause);
-        TextView = (TextView) findViewById(R.id.counter);
+        btnReset = (Button) findViewById(R.id.btnReset);
+        counter = (TextView) findViewById(R.id.counter);
+
+        /*
 
         btnStartServices.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view);
+            public void onClick (View v);
             {
                 StartTimer = SystemClock.uptimeMillis();
 
@@ -43,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view);
+            public void onClick (View v);
             {
             }
         } ;
@@ -52,24 +62,25 @@ public class MainActivity extends AppCompatActivity {
         btnStop.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view){
+            public void onClick (View v){
             }
         } ;
 
         btnPause.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view){
+            public void onClick (View v){
             }
         } ;
 
         btnStopServices.setOnClickListener(new View.OnClickListener());
         {
             @Override
-            public void onClick (View view)
+            public void onClick (View v)
             {
 
             }
         } ;
-
+*/
     }
+}
