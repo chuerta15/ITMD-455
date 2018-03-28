@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
     long tStart = System.currentTimeMillis();
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         btnReset = (Button) findViewById(R.id.btnReset);
         counter = (TextView) findViewById(R.id.counter);
 
-        /*
 
         btnStartServices.setOnClickListener(new View.OnClickListener());
         {
@@ -81,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         } ;
-*/
+
     }
 }
+
