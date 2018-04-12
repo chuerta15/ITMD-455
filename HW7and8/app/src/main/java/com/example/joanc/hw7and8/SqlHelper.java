@@ -12,7 +12,7 @@ import android.content.Context;
 import android.content.ContentValues;
 
 /**
- * Created by joanc on 4/10/2018.
+ * Created by joanc on 4/07/2018.
  */
 
 
@@ -27,6 +27,7 @@ public class SqlHelper extends SQLiteOpenHelper {
     private static final String KEY_RATING = "rating";
 
     public SqlHelper(Context context) {
+
         super(context, DATABSE_NAME, null, DATABASE_VERSION);
     }
 
@@ -41,25 +42,63 @@ public class SqlHelper extends SQLiteOpenHelper {
 }
 
     @Override
-    public void addBook(SQLiteDatabase db) {
+    //Adding Books function
+    public void addBook(Book book) {
+        Log.d("addBook", book.toString());
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_TITLE, book.getTitle());
+        values.put(KEY_AUTHOR, book.getAuthor());
+        values.put(KEY_RATING, book.getRatings());
+        db.insert(TABLE_BOOKS, null, values);
+        db.close();
 
-        return null;
     }
 
     @Override
     public List<Book> getAllBooks() {
-        return null;
+        List<Book> books = new LinkedList<Book>();
+        String query = "SELECT * FROM " + TABLE_BOOKS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Book book = null;
+        if (cursor.moveToFirst()) {
+            do {
+                book = new Book();
+                book.setId(Integer.parseInt(cursor.getString(0)));
+                book.setTitle(cursor.getString(1));
+                book.setAuthor(cursor.getString(2));
+                book.setRatings(cursor.getString(3));
+                books.add(book);
+            } while (cursor.moveToNext());
+        }
+        Log.d("getAllBooks()", books.toString());
+        return books;
     }
 
 
     @Override
     public void UpdateBook(Book b) {
-        return null;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("title", book.getTitle());
+        values.put("author", book.getAuthor());
+        int j = db.update(TABLE_BOOKS, values, KEY_ID+" = ?"
+        new String[] { String.valueOf(book.getId()) });
+        db.close();
+        Log.d("UpdateBook", book.toString());
+        return j;
+
     }
 
 
     @Override
     public void deleteBook(Book b) {
-        return null;
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_BOOKS, KEY_ID+" = ?",
+                new String[] { String.valueOf(book.getId()) });
+        db.close();
+        Log.d("deleteBook", book.toString());
     }
 }
