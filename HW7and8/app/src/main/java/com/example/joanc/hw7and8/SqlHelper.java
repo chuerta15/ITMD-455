@@ -10,6 +10,7 @@ import android.database.Cursor;
 import java.util.LinkedList;
 import android.content.Context;
 import android.content.ContentValues;
+import java.util.*;
 
 /**
  * Created by joanc on 4/07/2018.
