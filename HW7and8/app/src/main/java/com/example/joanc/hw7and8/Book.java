@@ -10,11 +10,15 @@ public class Book {
     private String title;
     private String author;
     private String rating;
-    public Book(){}
+
+    public Book() {
+    }
+
     public Book(String title, String author, String rating) {
         super();
         this.title = title;
         this.author = author;
         this.rating = rating;
 
+    }
 }

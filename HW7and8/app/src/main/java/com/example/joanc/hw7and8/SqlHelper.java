@@ -30,7 +30,7 @@ public class SqlHelper extends SQLiteOpenHelper {
 
     public SqlHelper(Context context){
 
-        super(context, DATABSE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
@@ -62,6 +62,13 @@ public class SqlHelper extends SQLiteOpenHelper {
         db.close();
 
     }
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+    {
+        db.execSQL("DROP TABLE IF EXISTS books");
+        onCreate(db);
+    }
+
 
    // @Override
     public List<Book> getAllBooks() {
@@ -86,7 +93,7 @@ public class SqlHelper extends SQLiteOpenHelper {
 
 
    // @Override
-    public void UpdateBook(Book b) {
+    public int UpdateBook(Book b) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -104,9 +111,19 @@ public class SqlHelper extends SQLiteOpenHelper {
     @Override
     public void deleteBook(Book b) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_BOOKS, KEY_ID+" = ?",
-                new String[] { String.valueOf(book.getId()) });
+        db.delete(TABLE_BOOKS, KEY_ID+" = ?", new String[] { String.valueOf(book.getId()) });
         db.close();
         Log.d("deleteBook", book.toString());
     }
-}
+
+    //Querie - Deleting 1 book
+    public void deleteBook(Book book) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_BOOKS, KEY_ID+" = ?",
+                new String[] { String.valueOf(book.getId())});
+                        db.close();
+        Log.d("deleteBook", book.toString());
+    }
+
+    }
+
