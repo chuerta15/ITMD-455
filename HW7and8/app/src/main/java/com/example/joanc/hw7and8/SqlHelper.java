@@ -93,7 +93,7 @@ public class SqlHelper extends SQLiteOpenHelper {
 
 
    // @Override
-    public int UpdateBook(Book b) {
+    public int UpdateBook(Book book) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -109,14 +109,8 @@ public class SqlHelper extends SQLiteOpenHelper {
 
 
     @Override
-    public void deleteBook(Book b) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_BOOKS, KEY_ID+" = ?", new String[] { String.valueOf(book.getId()) });
-        db.close();
-        Log.d("deleteBook", book.toString());
-    }
 
-    //Querie - Deleting 1 book
+    //Querie - Deleting book
     public void deleteBook(Book book) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_BOOKS, KEY_ID+" = ?",
