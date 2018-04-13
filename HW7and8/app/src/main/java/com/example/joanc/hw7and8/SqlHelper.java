@@ -3,7 +3,6 @@ package com.example.joanc.hw7and8;
 import android.database.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
@@ -20,16 +19,24 @@ import java.util.*;
 
 public class SqlHelper extends SQLiteOpenHelper {
 
-    // Create Table Columns
+    // Create Table
     public static final String TABLE_BOOKS = "books";
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "BookDB";
     private static final String KEY_ID = "id";
     private static final String KEY_TITLE = "title";
     private static final String KEY_AUTHOR = "author";
     private static final String KEY_RATING = "rating";
 
-    public SqlHelper(Context context) {
+    public SqlHelper(Context context){
 
         super(context, DATABSE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
     }
 
     @Override
@@ -40,7 +47,7 @@ public class SqlHelper extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_BOOK_TABLE);
     }
-}
+
 
     @Override
     //Adding Books function
@@ -56,7 +63,7 @@ public class SqlHelper extends SQLiteOpenHelper {
 
     }
 
-    @Override
+   // @Override
     public List<Book> getAllBooks() {
         List<Book> books = new LinkedList<Book>();
         String query = "SELECT * FROM " + TABLE_BOOKS;
@@ -78,15 +85,15 @@ public class SqlHelper extends SQLiteOpenHelper {
     }
 
 
-    @Override
+   // @Override
     public void UpdateBook(Book b) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("title", book.getTitle());
         values.put("author", book.getAuthor());
-        int j = db.update(TABLE_BOOKS, values, KEY_ID+" = ?"
-        new String[] { String.valueOf(book.getId()) });
+        int j = db.update(TABLE_BOOKS, values, KEY_ID+" = ?");
+        new String[] { String.valueOf(book.getId()) };
         db.close();
         Log.d("UpdateBook", book.toString());
         return j;
