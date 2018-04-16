@@ -20,9 +20,9 @@ import java.util.*;
 public class SqlHelper extends SQLiteOpenHelper {
 
     // Create Table
+    private static final String DATABASE_NAME = "Books";
     public static final String TABLE_BOOKS = "books";
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "BookDB";
     private static final String KEY_ID = "id";
     private static final String KEY_TITLE = "title";
     private static final String KEY_AUTHOR = "author";

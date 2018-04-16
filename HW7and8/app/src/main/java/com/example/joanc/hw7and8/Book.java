@@ -21,7 +21,7 @@ public class Book {
         this.rating = rating;
 
     }
-    //getters & setters
+
     public int getId() {
         return id;
     }
