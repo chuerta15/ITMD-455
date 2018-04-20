@@ -28,7 +28,7 @@ public class SqlHelper extends SQLiteOpenHelper {
     private static final String KEY_AUTHOR = "author";
     private static final String KEY_RATING = "rating";
 
-    public SqlHelper(Context context){
+    public SqlHelper(Context context) {
 
         super(context, DATABASE_NAME, null, 1);
     }
@@ -62,15 +62,15 @@ public class SqlHelper extends SQLiteOpenHelper {
         db.close();
 
     }
+
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-    {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS books");
         onCreate(db);
     }
 
 
-   // @Override
+    // @Override
     public List<Book> getAllBooks() {
         List<Book> books = new LinkedList<Book>();
         String query = "SELECT * FROM " + TABLE_BOOKS;
@@ -92,15 +92,15 @@ public class SqlHelper extends SQLiteOpenHelper {
     }
 
 
-   // @Override
+    // @Override
     public int UpdateBook(Book book) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("title", book.getTitle());
         values.put("author", book.getAuthor());
-        int j = db.update(TABLE_BOOKS, values, KEY_ID+" = ?");
-        new String[] { String.valueOf(book.getId()) };
+        int j = db.update(TABLE_BOOKS, values, KEY_ID + " = ?");
+        new String[]{String.valueOf(book.getId())};
         db.close();
         Log.d("UpdateBook", book.toString());
         return j;
@@ -113,11 +113,26 @@ public class SqlHelper extends SQLiteOpenHelper {
     //Querie - Deleting book
     public void deleteBook(Book book) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_BOOKS, KEY_ID+" = ?",
-                new String[] { String.valueOf(book.getId())});
-                        db.close();
+        db.delete(TABLE_BOOKS, KEY_ID + " = ?",
+                new String[]{String.valueOf(book.getId())});
+        db.close();
         Log.d("deleteBook", book.toString());
     }
 
+    //Getting Ratings
+    public ArrayList<String> queryauthors() {
+        ArrayList<String> a = new ArrayList<String>();
+        String query = "SELECT * FROM " + TABLE_BOOKS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            do {
+                a.add(cursor.getString(2));
+            } while (cursor.moveToNext());
+        }
+        Log.d("queryTitle()", a.toString());
+        return a; // return author
     }
+}
+
 
